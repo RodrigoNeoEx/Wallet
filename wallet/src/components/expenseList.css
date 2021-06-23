@@ -4,7 +4,9 @@
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   justify-items: center;
   align-items: center;
-  border: 1px solid
+  border: 1px solid;
+  font-size: 2vh;
+  text-align: center;
 }
 
 .trTD{
@@ -51,4 +53,54 @@
 
  .option:nth-child(even) {
   background-color: #011b6b;
+}
+
+@media (max-width: 550px) {
+  .table {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    display: grid;
+    grid-template-columns: 35vw 35vw;
+    grid-template-rows: auto auto auto auto auto auto auto auto auto;
+    height: 85vh;
+  }
+  thead {
+    grid-column: 1;
+    grid-row-start: 1;
+    grid-row-end: 10;
+    display: grid;
+    grid-template-rows: auto auto auto auto auto auto auto auto auto;
+  }
+  .tr {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 85vh;
+  }
+  th {
+    border-bottom: 1px solid;
+    width: 30vw;
+    margin-top: 6vh;
+    text-align: center;
+  }
+  td {
+    text-align: center;
+    border-bottom: 1px solid;
+    width: 30vw;
+    margin-top: 6vh;
+  }
+  tbody {
+    overflow: overlay;
+  }
+  .moeda {
+    padding: 0 0 1.3vh 0;
+    margin-top: 0.5px;
+  }
+  .tdButtom {
+    margin-top: 0;
+  }
+  .trTD button svg {
+    font-size: 6vh;
+    height: auto;
+  }
 }

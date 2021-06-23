@@ -30,18 +30,18 @@ class ExpensesList extends Component {
     const edit = this.btnEdit;
     const btn = this.btnDelete;
     return (
-      <table>
+      <table className="table">
         <thead>
           <tr className="tr">
             <th>Descrição</th>
             <th>Tag</th>
-            <th>Método de pagamento</th>
-            <th>Valor</th>
-            <th>Moeda</th>
-            <th>Câmbio utilizado</th>
+            <th className="hidden">Método de pagamento</th>
+            <th className="hidden">Valor</th>
+            <th className="hidden">Moeda</th>
+            <th className="hidden">Câmbio utilizado</th>
             <th>Valor convertido</th>
-            <th>Moeda de conversão</th>
-            <th>Editar/Excluir</th>
+            <th className="hidden">Moeda de conversão</th>
+            <th className="hidden">Editar/Excluir</th>
           </tr>
         </thead>
         <tbody>
@@ -51,13 +51,13 @@ class ExpensesList extends Component {
             <tr key={ index } className="tr trTD">
               <td>{ description }</td>
               <td>{ tag }</td>
-              <td>{ method }</td>
-              <td>{ value }</td>
-              <td>{ exchangeRates[currency].name }</td>
-              <td>{ parseFloat(exchangeRates[currency].ask).toFixed(2)}</td>
+              <td className="hidden">{ method }</td>
+              <td className="hidden" >{ value }</td>
+              <td className="moeda">{ exchangeRates[currency].name }</td>
+              <td className="hidden" >{ parseFloat(exchangeRates[currency].ask).toFixed(2)}</td>
               <td>{ (value * exchangeRates[currency].ask).toFixed(2)}</td>
-              <td>Real</td>
-              <td>
+              <td className="hidden">Real</td>
+              <td className="tdButtom">
                 <button data-testid="edit-btn" type="button" onClick={ () => edit(id) }>
                   <AiFillEdit className="edit" />
                 </button>

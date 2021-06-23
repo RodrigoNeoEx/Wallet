@@ -11,7 +11,7 @@ class ExpenseForms extends Component {
     super(props);
     this.state = {
       value: 0,
-      description: 'Hot Dog',
+      description: '',
       currency: 'USD',
       method: 'Dinheiro',
       tag: 'Alimentação',
@@ -43,7 +43,7 @@ class ExpenseForms extends Component {
     await getExpenses(expense);
     this.setState({
       value: 0,
-      description: 'Hot Dog',
+      description: '',
       currency: 'USD',
       method: 'Dinheiro',
       tag: 'Alimentação',
